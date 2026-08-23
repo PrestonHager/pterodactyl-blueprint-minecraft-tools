@@ -1,0 +1,27 @@
+{
+  "name": "minecraft-tools",
+  "version": "1.0.0",
+  "description": "A Pterodactyl extension for Minecraft server utilities",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "pterodactyl",
+    "panel",
+    "minecraft"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.7.2"
+  },
+  "devDependencies": {
+    "vite": "^8.2.2"
+  },
+  "allowScripts": {
+    "esbuild@0.21.5": true
+  }
+}
