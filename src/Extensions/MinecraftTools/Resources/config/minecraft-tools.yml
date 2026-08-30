@@ -1,0 +1,29 @@
+identifier: minecraft-tools
+name: Minecraft Tools
+description: A Pterodactyl extension for Minecraft server utilities
+version: 1.0.0
+author: ''
+repository: ''
+flags:
+  disable: false
+  cache: true
+type: panel
+admin:
+  view: resources/views/admin/view.blade.php
+dashboard:
+  components:
+    dir: dashboard/components
+routes:
+  - routes/plugins.php
+  - routes/versions.php
+  - routes/players.php
+  - routes/modpacks.php
+  - routes/config.php
+  - routes/icon.php
+assets:
+  - resources/assets/js
+  - resources/assets/css
+migrations:
+  - database/migrations
+config:
+  - resources/config/minecraft-tools.php

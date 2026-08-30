@@ -1,0 +1,93 @@
+@import 'bootstrap/scss/bootstrap';
+@import '@fortawesome/fontawesome-free/scss/fontawesome';
+@import '@fortawesome/fontawesome-free/scss/solid';
+@import '@fortawesome/fontawesome-free/scss/regular';
+@import '@fortawesome/fontawesome-free/scss/brands';
+
+.minecraft-tools {
+  .card {
+    transition: box-shadow 0.2s ease;
+    
+    &:hover {
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    }
+  }
+  
+  .btn-group-sm .btn {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+  }
+  
+  .table-responsive {
+    max-height: 600px;
+    overflow-y: auto;
+  }
+  
+  .badge {
+    font-size: 0.75rem;
+  }
+  
+  .list-group-item.active {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+  }
+  
+  .template-card {
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    }
+  }
+  
+  .spinner-border-sm {
+    width: 1rem;
+    height: 1rem;
+  }
+  
+  .form-control-color {
+    width: 3rem;
+    height: 2.5rem;
+    padding: 0.25rem;
+  }
+  
+  #editor {
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  }
+  
+  .ace_editor {
+    border: none !important;
+  }
+  
+  .ace_gutter {
+    background: #272822;
+    color: #75715e;
+  }
+  
+  .ace_monokai .ace_gutter-active-line {
+    background: #3e3d32;
+  }
+}
+
+.alert-dismissible {
+  padding-right: 3rem;
+}
+
+.position-fixed {
+  max-width: 350px;
+}
+
+@media (max-width: 576px) {
+  .position-fixed {
+    left: 1rem !important;
+    right: 1rem !important;
+    max-width: none;
+  }
+  
+  .btn-group-sm .btn {
+    padding: 0.2rem 0.4rem;
+    font-size: 0.8rem;
+  }
+}
