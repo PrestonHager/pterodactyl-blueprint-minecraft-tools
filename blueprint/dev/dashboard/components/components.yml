@@ -2,17 +2,17 @@ Navigation:
   NavigationBar:
     BeforeNavigation: ''
     AfterNavigation: ''
+  Routes:
+    - { Name: 'Minecraft Tools', Path: '/minecrafttools', Type: 'server', Component: 'MinecraftToolsSection', AdminOnly: 'false' }
+    - { Name: 'Players', Path: '/players', Type: 'server', Component: 'PlayersComponent', AdminOnly: 'false' }
+    - { Name: 'Plugins', Path: '/plugins', Type: 'server', Component: 'PluginsComponent', AdminOnly: 'false' }
+    - { Name: 'Modpacks', Path: '/modpacks', Type: 'server', Component: 'ModpacksComponent', AdminOnly: 'false' }
+    - { Name: 'Server Icon', Path: '/icon', Type: 'server', Component: 'IconComponent', AdminOnly: 'false' }
+    - { Name: 'Config', Path: '/config', Type: 'server', Component: 'ConfigComponent', AdminOnly: 'false' }
+    - { Name: 'Versions', Path: '/versions', Type: 'server', Component: 'VersionsComponent', AdminOnly: 'false' }
 SubNavigation:
   BeforeSubNavigation: ''
   AfterSubNavigation: ''
-Routes:
-  - { Name: 'Minecraft Tools', Path: '/minecraft-tools', Type: 'server', Component: 'sections/MinecraftToolsSection', AdminOnly: 'false' }
-  - { Name: 'Players', Path: '/players', Type: 'server', Component: 'components/PlayersComponent', AdminOnly: 'false' }
-  - { Name: 'Plugins', Path: '/plugins', Type: 'server', Component: 'components/PluginsComponent', AdminOnly: 'false' }
-  - { Name: 'Modpacks', Path: '/modpacks', Type: 'server', Component: 'components/ModpacksComponent', AdminOnly: 'false' }
-  - { Name: 'Server Icon', Path: '/icon', Type: 'server', Component: 'components/IconComponent', AdminOnly: 'false' }
-  - { Name: 'Config', Path: '/config', Type: 'server', Component: 'components/ConfigComponent', AdminOnly: 'false' }
-  - { Name: 'Versions', Path: '/versions', Type: 'server', Component: 'components/VersionsComponent', AdminOnly: 'false' }
 Dashboard:
   Serverlist:
     BeforeContent: ''

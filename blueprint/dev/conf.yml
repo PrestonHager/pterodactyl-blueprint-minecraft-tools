@@ -1,15 +1,16 @@
-identifier: minecraft-tools
-name: Minecraft Tools
-description: A Pterodactyl extension for Minecraft server utilities
-version: 1.0.0
-author: ''
-repository: ''
-flags:
-  disable: false
-  cache: true
-type: panel
+info:
+  name: Minecraft Tools
+  identifier: minecrafttools
+  description: A Pterodactyl extension for Minecraft server utilities
+  version: 1.0.0
+  author: PrestonHager
+  target: beta-2026-08
 admin:
   view: resources/views/admin/view.blade.php
 dashboard:
-  components:
-    dir: dashboard/components
+  components: dashboard/components
+requests:
+  views: resources/views
+  routers:
+    web: routes/web.php
+    client: routes/client.php

@@ -8,7 +8,19 @@
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint src --ext .js,.vue,.ts,.tsx",
-    "format": "prettier --write src"
+    "format": "prettier --write src",
+    "test:unit": "php vendor/bin/phpunit --testsuite unit",
+    "test:integration": "php vendor/bin/phpunit --testsuite integration",
+    "test": "npm run test:unit && npm run test:integration",
+    "test:docker:unit": "bash tools/test-docker.sh unit",
+    "test:docker:integration": "bash tools/test-docker.sh integration",
+    "test:docker:shell": "bash tools/test-docker.sh shell",
+    "panel:setup": "powershell -ExecutionPolicy Bypass -File tools/test-panel.ps1 setup",
+    "panel:start": "powershell -ExecutionPolicy Bypass -File tools/test-panel.ps1 start",
+    "panel:stop": "powershell -ExecutionPolicy Bypass -File tools/test-panel.ps1 stop",
+    "panel:refresh": "powershell -ExecutionPolicy Bypass -File tools/test-panel.ps1 refresh",
+    "panel:logs": "powershell -ExecutionPolicy Bypass -File tools/test-panel.ps1 logs",
+    "panel:reset": "powershell -ExecutionPolicy Bypass -File tools/test-panel.ps1 reset"
   },
   "keywords": [
     "pterodactyl",

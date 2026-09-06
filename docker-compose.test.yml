@@ -1,0 +1,42 @@
+services:
+  unit:
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+    working_dir: /workspace
+    volumes:
+      - .:/workspace
+    environment:
+      APP_ENV: testing
+      APP_DEBUG: "true"
+      COMPOSER_ALLOW_SUPERUSER: "1"
+    command: >
+      sh -lc "composer install --no-interaction --prefer-dist --no-progress && php vendor/bin/phpunit --testsuite unit --testdox"
+
+  integration:
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+    working_dir: /workspace
+    volumes:
+      - .:/workspace
+    environment:
+      APP_ENV: testing
+      APP_DEBUG: "true"
+      COMPOSER_ALLOW_SUPERUSER: "1"
+    command: >
+      sh -lc "composer install --no-interaction --prefer-dist --no-progress && php vendor/bin/phpunit --testsuite integration --testdox"
+
+  php:
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+    working_dir: /workspace
+    volumes:
+      - .:/workspace
+    environment:
+      APP_ENV: testing
+      APP_DEBUG: "true"
+      COMPOSER_ALLOW_SUPERUSER: "1"
+    command: >
+      sh -lc "composer install --no-interaction --prefer-dist --no-progress && bash"

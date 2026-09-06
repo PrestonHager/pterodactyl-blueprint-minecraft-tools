@@ -40,3 +40,6 @@ storage/framework/views/*
 # Uploads
 public/vendor/minecraft-tools/
 storage/app/public/minecraft-tools/
+
+# Local Blueprint test panel
+.test-panel/

@@ -78,12 +78,43 @@ npm run build
 ### Backend
 
 ```bash
-# Run tests
+# Run tests locally (requires a local PHP runtime)
 composer test
+composer test:unit
+composer test:integration
+
+# Run tests in Docker
+bash tools/test-docker.sh unit
+bash tools/test-docker.sh integration
+bash tools/test-docker.sh shell
 
 # Lint code
 composer lint
 ```
+
+### Local test panel
+
+The repository includes a disposable Blueprint/Pterodactyl test panel backed by Docker Desktop or Docker Engine. All panel data, containers, generated extension files, and logs are stored under `.test-panel/`, which is ignored by Git.
+
+On Windows PowerShell:
+
+```powershell
+npm run panel:setup
+```
+
+On macOS/Linux or Git Bash:
+
+```bash
+./tools/test-panel.sh setup
+```
+
+The setup command starts MariaDB, Valkey, and the Blueprint panel, stages the current repository as the `minecraft-tools` development extension, and runs Blueprint's `-build` command. Open `http://localhost:8080` after setup. Create the first local administrator with:
+
+```bash
+docker compose -p minecraft-tools-test-panel --project-directory . -f tools/test-panel/docker-compose.yml exec panel php artisan p:user:make
+```
+
+Use `panel:refresh` or `./tools/test-panel.sh refresh` after source changes. `start`, `stop`, `logs`, and `reset` control the local instance; `reset` removes its database volume and generated files.
 
 ## API Endpoints
 

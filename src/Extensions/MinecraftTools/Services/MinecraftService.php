@@ -12,7 +12,7 @@ class MinecraftService
 
     public function __construct(array $config = [])
     {
-        $this->apiConfig = config('minecraft-tools.api', []);
+        $this->apiConfig = $config ?: config('minecraft-tools.api', []);
     }
 
     public function getSpigotPlugin(string $id): ?array
